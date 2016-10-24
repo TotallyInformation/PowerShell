@@ -88,7 +88,7 @@ Write-Output ("Getting AAD Users: {0} min" -f [math]::Round((New-TimeSpan -Start
 # Get all the users in AAD who have enabled logins (including those with no licenses) - but excludes SharePoint site mailboxes
 $allUsers = Get-MsolUser -All -EnabledFilter EnabledOnly | `
                 where { ($_.UserPrincipalName -notmatch '^SMO-') } | `
-                Select UserPrincipalName, isLicensed, LastPasswordChangeTimestamp, DisplayName, CreationDate
+                Select UserPrincipalName, isLicensed, LastPasswordChangeTimestamp, DisplayName, WhenCreated
 
 Write-Output ("Got {1} enabled AAD Users (excluding SMO): {0} min" -f [math]::Round((New-TimeSpan -Start $strt).TotalMinutes,4), $allUsers.Count )
 
@@ -168,7 +168,7 @@ forEach ($user in $allUsers) {
         UserPrincipalName = $user.UserPrincipalName
         LastLogonTimestamp = $logon
         LastPasswordChangeTimestamp = $user.LastPasswordChangeTimestamp
-        CreationDate = $user.CreationDate
+        CreationDate = $user.WhenCreated
         LogonCount = $out.Count
         isLicensed = $user.isLicensed
         DisplayName = $user.DisplayName
