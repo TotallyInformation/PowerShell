@@ -11,10 +11,14 @@
  #   Active user list excludes SP mailboxes (SMO-*) but includes External users (*#EXT#*)
  #
  #   The following variables are available after running:
- #   $allUsers     : All users in AAD who could potentially log on excluding SP mailboxes (UPN, isLicensed, Last PW Chg, Display Name)
+ #   $allUsers     : All users in AAD who could potentially log on excluding SP mailboxes (UPN, isLicensed, Last PW Chg, Display Name, Created Date)
  #   $userData     : As above, enriched with logon data for last n days (+ Last logon date, # logons)
  #   $inactiveUsers: Users not logged in in the last n days (data as above)
  #   $loggedOnUsers: Users that did log in in the last n days (data as above)
+ #
+ # To Do:
+ #    Allow the loop to break - so that it can be restarted
+ #    Allow a single user to be queried - rather than just all users
  #
  # Author: Julian Knight, Totally Information, 2016-10-20
  # Master Location: https://github.com/TotallyInformation/PowerShell/blob/master/Get-O365UserLoginStats.ps1
@@ -198,7 +202,7 @@ Write-Output 'Inactive user list excludes SP mailboxes (SMO-*) but includes Exte
 Write-Output 'Active user list excludes SP mailboxes (SMO-*) but includes External users (*#EXT#*) '
 Write-Output ' '
 Write-Output 'The following variables are now available:'
-Write-Output '    $allUsers     : All users in AAD who could potentially log on excluding SP mailboxes (UPN, isLicensed, Last PW Chg, Display Name)'
+Write-Output '    $allUsers     : All users in AAD who could potentially log on excluding SP mailboxes (UPN, isLicensed, Last PW Chg, Display Name, Created Date)'
 Write-Output '    $userData     : As above, enriched with logon data for last n days (+ Last logon date, # logons)'
 Write-Output '    $inactiveUsers: Users not logged in in the last n days (data as above)'
 Write-Output '    $loggedOnUsers: Users that did log in in the last n days (data as above)'
