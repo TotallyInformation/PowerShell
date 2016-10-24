@@ -15,6 +15,7 @@
  #   $loggedOnUsers: Users that did log in in the last n days (data as above)
  #
  # Author: Julian Knight, Totally Information, 2016-10-20
+ # Master Location: https://github.com/TotallyInformation/PowerShell/blob/master/Get-O365UserLoginStats.ps1
  # Inspiration from: https://github.com/OfficeDev/O365-InvestigationTooling/blob/master/InactiveUsersLast90Days.ps1
  #>
 
@@ -29,7 +30,7 @@ $strt = get-date
 Write-Output "Starting $cmdName at $strt"
 
 #region ============= CHANGE THESE ============= #
-$mylogin = 'julianknight@england.nhs.uk'
+$mylogin = 'global.admin@tenantname.onmicrosoft.com'
 $days = 90 # days to check
 #endregion ===================================== #
 
