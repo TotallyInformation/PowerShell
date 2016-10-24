@@ -1,5 +1,5 @@
 <#
- # Script to check which users have NOT logged in in the previous n days
+ # Script to check which Office 365 users have NOT logged in in the previous n days
  # 
  # Also produces output for all users who's logins are enabled and output for all users who HAVE logged in.
  #
