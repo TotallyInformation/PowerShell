@@ -3,6 +3,8 @@
  # 
  # Also produces output for all users who's logins are enabled and output for all users who HAVE logged in.
  #
+ # WARNING: This script takes around 6-10 seconds per user to run (for a 90d check). So 8k users will take over 10 hours to complete.
+ #
  # Notes:
  #   All user list excludes users blocked from logging in (but includes users with no license, including *#EXT#*)
  #   Inactive user list excludes SP mailboxes (SMO-*) but includes External users (*#EXT#*)
