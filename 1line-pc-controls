@@ -1,0 +1,21 @@
+# A collection of one-liners for working with Windows 10
+# Note that these can easily be used with Node.js, Node-RED, etc. for controlling a PC
+
+# =============================================================================== #
+# ==== The following all work with standard user accounts ==== #
+# =============================================================================== #
+
+# Text to Speech
+# Uses Windows 10 native TTS, see this gist for details: https://gist.github.com/TotallyInformation/edeccffda6ba5fc61d41c1dc563dc526
+Add-Type -AssemblyName System.speech; $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $speak.Speak('This is ground control to Major Tom')
+
+# Change Monitor Brightness (only on laptops/tables etc)
+# Parameters: (timeout,percentage)
+(Get-WmiObject -Namespace root/WMI -Class WmiMonitorBrightnessMethods).WmiSetBrightness(1,75)
+
+# =============================================================================== #
+# ==== The following require elervated permissions (e.g. local admin rights) ==== #
+# =============================================================================== #
+
+
+# ==== EOF ==== #
