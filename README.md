@@ -6,3 +6,6 @@ A collection of snippets, functions and modules useful to me
   
 - [Get-O365UserLoginStats.ps1](https://github.com/TotallyInformation/PowerShell/blob/master/Get-O365UserLoginStats.ps1)
   A script that analyses Azure AD and the Office 365 combined audit log checking for active users who have and haven't logged in over the past n days. Until recently (2016H2), this data was not possible to get except for Exchange Online users. Warning: This script takes HOURS to run for a reasonable sized tenant of a few thousand active users.
+
+- [Get-O365ServiceLocations.ps1](https://github.com/TotallyInformation/PowerShell/blob/master/Get-O365ServiceLocations.ps1)
+  A script to show where all of your Azure/Office 365 data resides - in which datacentre.
